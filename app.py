@@ -44,7 +44,7 @@ df_selection = df.query(
 
 
 # --- main page ---
-st.title("Fuel Consumption and CO₂ Emissions Dashboard")
+st.title("Fuel Consumption and CO₂ Emissions Dashboard", anchor=False)
 st.markdown("This dashboard provides an overview of fuel consumption and CO₂ emissions of various ship types operating in Nigerian waterways over one year. By exploring the efficiency and environmental impact of these vessels, we can provide actionable insights for optimizing maritime operations and reducing emissions.")
 st.markdown("##")
 
@@ -55,14 +55,14 @@ average_ee = round(df_selection["engine_efficiency"].mean(), 2)
 
 left_column, middle_column, right_column = st.columns(3)
 with left_column:
-    st.subheader("Total Fuel Consumption:")
-    st.subheader(f"{total_fuel:,}L")
+    st.subheader("Total Fuel Consumption:", anchor=False)
+    st.subheader(f"{total_fuel:,}L", anchor=False)
 with middle_column:
-    st.subheader("Total Carbon Emissions:")
-    st.subheader(f"{total_co2:,}kg")
+    st.subheader("Total Carbon Emissions:", anchor=False)
+    st.subheader(f"{total_co2:,}kg", anchor=False)
 with right_column:
-    st.subheader("Average Ship Engine Efficiency:")
-    st.subheader(f"{average_ee}%")
+    st.subheader("Average Ship Engine Efficiency:", anchor=False)
+    st.subheader(f"{average_ee}%", anchor=False)
 
 st.markdown("---")
 
@@ -75,7 +75,7 @@ fuel_per_month_bar = px.bar(
     x=fuel_per_month.index,
     y="fuel_consumption",
     orientation="v",
-    title="<b>Average Fuel Consumption (L) per Month</b>",
+    title="<b>Average Fuel Consumption (L) over each Month</b>",
     color_discrete_sequence=["#0083B8"] * len(fuel_per_month),
     template="plotly_white"
 )
@@ -88,7 +88,7 @@ co2_per_month_bar = px.bar(
     x="CO2_emissions",
     y=co2_per_month.index,
     orientation="h",
-    title="<b>Average CO2 Emissions (kg) per Month</b>",
+    title="<b>Average CO2 Emissions (kg) over each Month</b>",
     color_discrete_sequence=["#0083B8"] * len(co2_per_month),
     template="plotly_white"
 )
