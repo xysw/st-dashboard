@@ -75,7 +75,7 @@ fuel_per_month_bar = px.bar(
     x=fuel_per_month.index,
     y="fuel_consumption",
     orientation="v",
-    title="<b>Average Fuel Consumption (L) over each Month</b>",
+    title="<b>Average Fuel Consumption (L) per Month</b>",
     color_discrete_sequence=["#0083B8"] * len(fuel_per_month),
     template="plotly_white"
 )
@@ -88,7 +88,7 @@ co2_per_month_bar = px.bar(
     x="CO2_emissions",
     y=co2_per_month.index,
     orientation="h",
-    title="<b>Average CO2 Emissions (kg) over each Month</b>",
+    title="<b>Average CO2 Emissions (kg) per Month</b>",
     color_discrete_sequence=["#0083B8"] * len(co2_per_month),
     template="plotly_white"
 )
